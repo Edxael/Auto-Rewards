@@ -1,0 +1,45 @@
+body{
+    background-color: rgba(168, 242, 250, 0.809);
+    text-align: center;
+}
+
+
+.G-Pap-Title{
+    text-align: center;
+    padding: 1px;
+    margin-bottom: 15px;
+}
+
+.G-Pap-Content{
+    text-align: left;
+    padding: 25px 15px;
+}
+
+
+
+/* ===[ Terms & Conditions ]============================================ */
+.prof-label{
+    margin-left: 7px;
+}
+
+.prof-input{
+    padding-left: 3px;
+}
+
+
+
+/* ===[ Terms & Conditions ]============================================ */
+.pap-terms-Title{
+    text-align: center;
+    padding: 1px;
+    margin-bottom: 15px;
+}
+
+.paper-terms{
+    text-align: left;
+    padding: 25px 15px;
+}
+
+.li-Terms{
+    margin-bottom: 12px;
+}
