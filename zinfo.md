@@ -9,6 +9,11 @@ https://www.npmjs.com/package/material-ui
 
 
 
+Manage Complex State in React Apps with MobX
+https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx
+
+
+
 react-responsive-ui
 https://www.npmjs.com/package/react-responsive-ui
 
