@@ -42,6 +42,7 @@ export default class extends React.Component{
                                 <AppBar title="Rewards" iconClassNameRight="muidocs-icon-navigation-expand-more" onLeftIconButtonClick={ () => { this.setState({ open: true }) } }  />
 
                                 { this.state.loged ? <MenuY/> : <MenuN/> }
+                                Put the two "Menues" on the ternary operator...
                         
                                 <hr/>
                         
