@@ -17,6 +17,16 @@ body{
 
 
 
+
+/* ===[ Log-In ]============================================ */
+.LogIn-Paper{
+    text-align: center;
+}
+
+
+
+
+
 /* ===[ Terms & Conditions ]============================================ */
 .prof-label{
     margin-left: 7px;
