@@ -4,14 +4,14 @@ import { ApolloProvider } from "react-apollo"
 import { HashRouter, Route, Link } from 'react-router-dom'
 import './css/style.css'
 import { client } from './EndPoint/EndPoint'
+import { observer } from 'mobx-react'
+import MS from './MobX/MobXStorage'
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
-
-import MenuN from './Menus/01-No-LogIn'
-import MenuY from './Menus/02-Yes-LogIn'
+import FlatButton from 'material-ui/FlatButton'
 
 
 import LogIn from './00-ZLogIn'
@@ -27,7 +27,7 @@ import ConfScreen from './09-ConfScreen'
 
 
 
-export default class extends React.Component{
+class Main extends React.Component{
     state = { open: false, loged: false }
 
     render(){
@@ -39,10 +39,22 @@ export default class extends React.Component{
                         <HashRouter>
                             <div >
 
-                                <AppBar title="Rewards" iconClassNameRight="muidocs-icon-navigation-expand-more" onLeftIconButtonClick={ () => { this.setState({ open: true }) } }  />
+                                <AppBar title="Rewards" onLeftIconButtonClick={ () => { this.setState({ open: true }) } } iconElementRight={<FlatButton label="Log-Out" onClick={ () => { MS.loged = false } } />} />
 
-                                { this.state.loged ? <MenuY/> : <MenuN/> }
-                                Put the two "Menues" on the ternary operator...
+                                { MS.loged ?
+                                        <Drawer docked={false} width={200} open={this.state.open} onRequestChange={(open) => this.setState({open})} >
+                                            <MenuItem primaryText="My Profile" containerElement={<Link to="/2" />} onClick={ () => { this.setState({ open: false }) } } />
+                                            <MenuItem primaryText="Update Password" containerElement={<Link to="/4" />} onClick={ () => { this.setState({ open: false }) } } />
+                                            <MenuItem primaryText="Points Histo" containerElement={<Link to="/5" />} onClick={ () => { this.setState({ open: false }) } } />
+                                            <MenuItem primaryText="Member Benefits" containerElement={<Link to="/6" />} onClick={ () => { this.setState({ open: false }) } } />
+                                            <MenuItem primaryText="Redeem Points" containerElement={<Link to="/7" />} onClick={ () => { this.setState({ open: false }) } } />
+                                            <MenuItem primaryText="Terms n Cond" containerElement={<Link to="/1" />} onClick={ () => { this.setState({ open: false }) } } />
+                                        </Drawer>
+                                    :
+                                        <Drawer docked={false} width={200} open={this.state.open} onRequestChange={(open) => this.setState({open})} >
+                                            <MenuItem primaryText="Please LogIn"  onClick={ () => { this.setState({ open: false }) } } />
+                                        </Drawer>
+                                }
                         
                                 <hr/>
                         
@@ -70,15 +82,4 @@ export default class extends React.Component{
     }
 }
 
-
-{/* <Drawer docked={false} width={200} open={this.state.open} onRequestChange={(open) => this.setState({open})} >
-
-<MenuItem primaryText="My Profile" containerElement={<Link to="/2" />} onClick={ () => { this.setState({ open: false }) } } />
-<MenuItem primaryText="Update Profile" containerElement={<Link to="/3" />} onClick={ () => { this.setState({ open: false }) } } />
-<MenuItem primaryText="Points Histo" containerElement={<Link to="/5" />} onClick={ () => { this.setState({ open: false }) } } />
-<MenuItem primaryText="Member Benefits" containerElement={<Link to="/6" />} onClick={ () => { this.setState({ open: false }) } } />
-<MenuItem primaryText="Redeem Points" containerElement={<Link to="/7" />} onClick={ () => { this.setState({ open: false }) } } />
-
-<MenuItem primaryText="Terms n Cond" containerElement={<Link to="/1" />} onClick={ () => { this.setState({ open: false }) } } />
-    
-</Drawer> */}
+export default observer(Main)

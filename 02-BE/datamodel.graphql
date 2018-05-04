@@ -1,4 +1,34 @@
 type User {
   id: ID! @unique
-  name: String!
+  fname: String!
+  lname: String!
+  phone: String!
+  email: String! @unique
+  address: String
+  zip: String
+  city: String
+  state: String
+  subcription: Boolean!
+  squestion: String!
+  points: Int
+  password: String!
+  trans: [Transaction!]!
+  addpoints: [Earn!]!
+}
+
+
+type Transaction {
+  id: ID! @unique
+  tdate: String!
+  item: String!
+  pcost: Int!
+  owner: User!
+}
+
+
+type Earn {
+  id: ID! @unique
+  edate: String!
+  quantity: Int!
+  owner: User!
 }

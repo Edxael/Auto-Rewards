@@ -1,5 +1,7 @@
 import React from 'react'
 import Paper from 'material-ui/Paper'
+import MS from './MobX/MobXStorage'
+import { Redirect } from 'react-router-dom'
 
 export default class extends React.Component{
     render(){
@@ -20,12 +22,14 @@ export default class extends React.Component{
                         <li className="li-Terms" >You may not sell or barter points or redeem points for cash.</li>
                         <li className="li-Terms" >Crystal Rewards points in a Member’s Account do not constitute property of the Member. Points have no fixed value, are not transferable and are not redeemable for cash or any other form of credit. Points have no value until presented by the Member for redemption in accordance with the Terms and Conditions.</li>
                         <li className="li-Terms" >perator may modify the points listed in your Program Account based on actual stay information.</li>
-                    </ol>
-                    
+                    </ol>   
                 </Paper>
-                
+
+                { MS.loged ? <div></div> : <Redirect push to="/" /> }
             </div>
         )
     }
 }
              
+
+// { MS.loged ? <div>_</div> : <Redirect push to="/" /> } 

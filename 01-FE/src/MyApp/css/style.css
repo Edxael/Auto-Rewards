@@ -1,7 +1,46 @@
+
+/*==============================================================*/
+              /*MEDIA QUERES*/
+/*==============================================================*/
+ 
 body{
     background-color: rgba(168, 242, 250, 0.809);
     text-align: center;
+    padding: 10px 30%;
 }
+
+
+@media screen and (max-width: 1050px) {
+    body{
+        background-color: rgba(168, 242, 250, 0.809);;
+        text-align: center;
+        padding: 10px 20%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    body{
+        background-color: rgba(168, 242, 250, 0.809);
+        text-align: center;
+        padding: 10px 10%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    body{
+        /* background-color: rgba(168, 242, 250, 0.809); */
+        background-color: rgba(168, 242, 250, 0.809);
+        text-align: center;
+        padding: 10px 20px;
+    }
+}
+
+/* ============================================================== */
+/* ============================================================== */
+
+
+
+
 
 
 .G-Pap-Title{
@@ -15,7 +54,9 @@ body{
     padding: 25px 15px;
 }
 
-
+.div-center{
+    text-align: center;
+}
 
 
 /* ===[ Log-In ]============================================ */
@@ -52,4 +93,27 @@ body{
 
 .li-Terms{
     margin-bottom: 12px;
+}
+
+
+
+
+/* ===[ My Profile ]============================================ */
+.subscribe-ch-box{
+    font-size: 12px;
+}
+
+.sec-question{
+    font-size: 10px;
+}
+
+
+
+
+/* ===[ MyBenefits ]============================================ */
+.bene-tow-col{
+    padding: 13px 0px;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(255, 252, 163, 0.809);
 }

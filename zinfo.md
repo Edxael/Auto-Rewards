@@ -180,3 +180,23 @@ const updateUerAction = {
 }
 store.dispatch(updateUerAction)
 =======================================
+
+
+
+
+
+========================
+Create user:
+mutation{
+  createUser(data: { 
+    		name: "Ayanami Ray", 
+    		email: "ray@nerv.net", 
+    		password: "eva01" }){
+    id
+    name
+    email
+    password
+  }
+}
+
+========================
