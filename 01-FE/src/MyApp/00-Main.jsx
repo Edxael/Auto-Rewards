@@ -24,6 +24,7 @@ import MyBenefits from './06-MyBenefits'
 import RedeemPoints from './07-RedeemPoints'
 import Review from './08-Review'
 import ConfScreen from './09-ConfScreen'
+import RedeemHisto from './10-RedeemHisto'
 
 
 
@@ -46,6 +47,7 @@ class Main extends React.Component{
                                             <MenuItem primaryText="My Profile" containerElement={<Link to="/2" />} onClick={ () => { this.setState({ open: false }) } } />
                                             <MenuItem primaryText="Update Password" containerElement={<Link to="/4" />} onClick={ () => { this.setState({ open: false }) } } />
                                             <MenuItem primaryText="Points Histo" containerElement={<Link to="/5" />} onClick={ () => { this.setState({ open: false }) } } />
+                                            <MenuItem primaryText="Redeem Histo" containerElement={<Link to="/10" />} onClick={ () => { this.setState({ open: false }) } } />
                                             <MenuItem primaryText="Member Benefits" containerElement={<Link to="/6" />} onClick={ () => { this.setState({ open: false }) } } />
                                             <MenuItem primaryText="Redeem Points" containerElement={<Link to="/7" />} onClick={ () => { this.setState({ open: false }) } } />
                                             <MenuItem primaryText="Terms n Cond" containerElement={<Link to="/1" />} onClick={ () => { this.setState({ open: false }) } } />
@@ -68,6 +70,7 @@ class Main extends React.Component{
                                 <Route path="/7" component={RedeemPoints}/>
                                 <Route path="/8" component={Review}/>
                                 <Route path="/9" component={ConfScreen}/>
+                                <Route path="/10" component={RedeemHisto}/>
         
                                 <br/>
                                 <hr/>
