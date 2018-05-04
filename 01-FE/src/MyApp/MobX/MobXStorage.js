@@ -4,7 +4,7 @@ import { extendObservable } from 'mobx'
 class MyStorage {
     constructor(){
         extendObservable(this, {
-            loged: false,
+            loged: true,
             uemail: ''
         })
     }

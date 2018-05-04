@@ -4,7 +4,8 @@ import { observer } from 'mobx-react'
 import MS from './MobX/MobXStorage'
 import { client } from './EndPoint/EndPoint'
 import { Redirect } from 'react-router-dom'
-
+import * as storage from './MobX/LocMem.js'
+// storage.get('email')
 
 import Paper from 'material-ui/Paper'
 import TextField from 'material-ui/TextField'
@@ -45,8 +46,9 @@ class LogIn extends React.Component{
                 this.setState({ uemal: '', upass: '', open: true })
             }else if (temp1.password === this.state.upass){
                 console.log("Correct Password.................")
-                MS.uemal = this.state.uemal 
-                console.log("Email Saved: ", MS.uemal)
+                storage.add('email', this.state.uemal)
+                // MS.uemal = this.state.uemal 
+                console.log("Email Saved: ", storage.get('email') )
                 this.setState({ redirect: true, uemal: '', upass: '' })
                 console.clear()
                 MS.loged = true

@@ -3,7 +3,7 @@ import MS from './MobX/MobXStorage'
 import { Redirect } from 'react-router-dom'
 import gql from "graphql-tag"
 import { client } from './EndPoint/EndPoint'
-
+import * as storage from './MobX/LocMem.js'
 
 import Paper from 'material-ui/Paper'
 import {List, ListItem} from 'material-ui/List'
@@ -21,7 +21,7 @@ export default class extends React.Component{
         let info = await client.query({
             query: gql`
             query {
-                user(where: { email: "${MS.uemail}" }){
+                user(where: { email: "${storage.get('email')}" }){
                     trans{
                         id
                         tdate

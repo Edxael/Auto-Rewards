@@ -19,13 +19,31 @@ import {
 
 
 export default class extends React.Component{
-    state = { city: '', state: '' }
+    state = { choise: 0, selected: [] }
+
+    
+    
+      
 
     render(){
 
+        const isSelected = (index) => {
+            return this.state.selected.indexOf(index) !== -1;
+          };
+
+
+        const handleRowSelection = (selectedRows) => {
+            this.setState({
+                selected: selectedRows,
+            });
+        };
+
+
         const RedeemMyPoints = async () => {
-            console.log('Redeem...')
+            console.log('Redeem option: ', this.state.selected)
         }
+
+        // selected={ () => { this.setState({ choise: 3 }) } } 
 
         return(
             <div>
@@ -36,7 +54,7 @@ export default class extends React.Component{
                 <Paper className="G-Pap-Content" zDepth={2}>
                 <h3>Avaliable Points: 4512</h3>
 
-                <Table>
+                <Table onRowSelection={this.handleRowSelection} >
 
                     <TableHeader>
                         <TableRow>
@@ -47,19 +65,19 @@ export default class extends React.Component{
                     </TableHeader>
 
                     <TableBody>
-                        <TableRow>
+                        <TableRow selected={ isSelected(1)} >
                             <TableRowColumn>Free Night Stay</TableRowColumn>
-                            <TableRowColumn>Enjoy a free night stay at any Crystal Inn</TableRowColumn>
+                            <TableRowColumn>Free night stay.</TableRowColumn>
                             <TableRowColumn>1,500</TableRowColumn>
                         </TableRow>
-                        <TableRow>
+                        <TableRow selected={ isSelected(2)} >
                             <TableRowColumn>$ 25.00 Gift Card</TableRowColumn>
-                            <TableRowColumn>Gift card from participating partners</TableRowColumn>
+                            <TableRowColumn>Gift card.</TableRowColumn>
                             <TableRowColumn>2,000</TableRowColumn>
                         </TableRow>
-                        <TableRow>
+                        <TableRow selected={this.isSelected(3)} >
                             <TableRowColumn>$ 50.00 Gift Card</TableRowColumn>
-                            <TableRowColumn>Gift card from participating partners</TableRowColumn>
+                            <TableRowColumn>Gift card.</TableRowColumn>
                             <TableRowColumn>4,000</TableRowColumn>
                         </TableRow>
                     </TableBody>
