@@ -25,6 +25,7 @@ import RedeemPoints from './07-RedeemPoints'
 import Review from './08-Review'
 import ConfScreen from './09-ConfScreen'
 import RedeemHisto from './10-RedeemHisto'
+import AllUsers from './11-All-Users.jsx'
 
 
 
@@ -51,6 +52,7 @@ class Main extends React.Component{
                                             <MenuItem primaryText="Member Benefits" containerElement={<Link to="/6" />} onClick={ () => { this.setState({ open: false }) } } />
                                             <MenuItem primaryText="Redeem Points" containerElement={<Link to="/7" />} onClick={ () => { this.setState({ open: false }) } } />
                                             <MenuItem primaryText="Terms n Cond" containerElement={<Link to="/1" />} onClick={ () => { this.setState({ open: false }) } } />
+                                            <MenuItem primaryText="All-Users" containerElement={<Link to="/11" />} onClick={ () => { this.setState({ open: false }) } } />
                                         </Drawer>
                                     :
                                         <Drawer docked={false} width={200} open={this.state.open} onRequestChange={(open) => this.setState({open})} >
@@ -71,6 +73,7 @@ class Main extends React.Component{
                                 <Route path="/8" component={Review}/>
                                 <Route path="/9" component={ConfScreen}/>
                                 <Route path="/10" component={RedeemHisto}/>
+                                <Route path="/11" component={AllUsers}/>
         
                                 <br/>
                                 <hr/>

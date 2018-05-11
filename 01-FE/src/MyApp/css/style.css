@@ -4,7 +4,8 @@
 /*==============================================================*/
  
 body{
-    background-color: rgba(168, 242, 250, 0.809);
+    /* background-color: rgba(168, 242, 250, 0.809); */
+    background-color: rgba(195, 250, 168, 0.809);
     text-align: center;
     padding: 10px 30%;
 }
@@ -12,7 +13,7 @@ body{
 
 @media screen and (max-width: 1050px) {
     body{
-        background-color: rgba(168, 242, 250, 0.809);;
+        /* background-color: rgba(168, 242, 250, 0.809);; */
         text-align: center;
         padding: 10px 20%;
     }
@@ -20,7 +21,7 @@ body{
 
 @media screen and (max-width: 850px) {
     body{
-        background-color: rgba(168, 242, 250, 0.809);
+        /* background-color: rgba(168, 242, 250, 0.809); */
         text-align: center;
         padding: 10px 10%;
     }
@@ -29,7 +30,7 @@ body{
 @media screen and (max-width: 450px) {
     body{
         /* background-color: rgba(168, 242, 250, 0.809); */
-        background-color: rgba(168, 242, 250, 0.809);
+        /* background-color: rgba(168, 242, 250, 0.809); */
         text-align: center;
         padding: 10px 20px;
     }
